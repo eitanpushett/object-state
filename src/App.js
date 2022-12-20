@@ -13,8 +13,50 @@ function App() {
   }
 
     function AddItem(List){
-      setToDoList(toDoList.push(toDo))
+      //setToDoList(toDoList.push(toDo)) wrong
+      setToDoList([...toDoList,toDo])
+      console.log(toDoList)
     }
+
+    console.log("-----Example------")
+    let A = 'Messi'
+    let B = A
+
+    console.log(B)
+    B = 'Ronaldo'
+    console.log(A)
+    console.log(B)
+
+    console.log("-----Arrays------")
+
+    let listA = ['Messi','Mbappe','Ronaldo']
+    let listB = listA
+    listA.push('Kane')
+    listB.push('Modric')
+    console.log(listA)
+    console.log(listB)
+
+
+
+    //Solution for arrays issue (make them act separtly)
+
+
+    console.log("-----SpreadOperator------")
+
+    let listC = [...listA]
+    listC.push('Griezmann')
+    console.log(listA)
+    console.log(listC)
+
+
+    //filters
+    console.log("-----Filters------")
+
+    let listD = listA.filter(player => player !== 'Ronaldo')
+    console.log(listA)
+    console.log(listD)
+
+
 
 
 
